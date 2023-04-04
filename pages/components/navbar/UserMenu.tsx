@@ -1,4 +1,5 @@
 'use client'
+import useRegisterModal from '@/pages/hooks/useRegisterModal'
 import { useCallback, useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import Avatar from '../Avatar'
@@ -6,7 +7,7 @@ import MenuItem from './MenuItem'
 type Props = {}
 
 const UserMenu = (props: Props) => {
-
+    const registerModal = useRegisterModal();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = useCallback(() => {
@@ -76,7 +77,7 @@ const UserMenu = (props: Props) => {
                             label="Login"
                             />    
                             <MenuItem 
-                            onClick={() =>{}}
+                            onClick={registerModal.onOpen}
                             label="Sign up"
                             />    
                         </>

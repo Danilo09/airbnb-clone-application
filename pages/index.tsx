@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import { Nunito } from 'next/font/google'
 import Navbar from './components/navbar/Navbar'
+import RegisterModal from './components/modals/RegisterModal'
+import ToasterProvider from './providers/ToasterProvider'
 
 
 const font = Nunito ({
@@ -15,7 +17,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <>
+      <ToasterProvider />
       <Navbar />
+      <RegisterModal />
+      </>
     </>
   )
 }
